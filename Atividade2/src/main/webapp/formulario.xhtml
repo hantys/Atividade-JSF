@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+  <title>Formulário de Contato</title>
+  <h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<h:body>
+  <div class='container'>
+
+    <h:form>
+      <h:outputLabel value="Nome:" for="nome" />
+      <h:inputText id="nome" value="#{pessoa.nome}" styleClass="campo" />
+      <br />
+      <h:outputLabel value="Sobrenome:" for="sobrenome" />
+      <h:inputText id="sobrenome" value="#{pessoa.sobrenome}"
+        styleClass="campo" />
+      <br />
+      <h:outputLabel value="Telefone:" for="telefone" />
+      <h:inputText id="telefone" value="#{pessoa.telefone}"
+        styleClass="campo" />
+      <br />
+      <h:outputLabel value="E-mail:" for="email" />
+      <h:inputText id="email" value="#{pessoa.email}" styleClass="campo" />
+      <br />
+      <h:commandButton value="Inserir" action="#{pessoa.insereUser}"
+        styleClass="botao" />
+    </h:form>
+
+    <br />
+    <h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+      <h:column>
+        <f:facet name="header">Nome</f:facet>
+        <h:outputText value="#{pessoa.nome}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Sobrenome</f:facet>
+        <h:outputText value="#{pessoa.sobrenome}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Telefone</f:facet>
+        <h:outputText value="#{pessoa.telefone}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">E-mail</f:facet>
+        <h:outputText value="#{pessoa.email}" />
+      </h:column>
+    </h:dataTable>
+  </div>
+ 
+</h:body>
+
+
+<style>
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2em;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+aside.foto img {
+  max-width: 100%;
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.info-pessoal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.campo {
+  width: 250px;
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h\:commandButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+h\:commandButton:hover {
+  background-color: #45a049;
+}
+</style>
+</html>
